@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reimbursement Portal</title>
+    <link rel="stylesheet" href="/project-1/styles/headerStyles.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="/project-1/scripts/new-reim.js"></script>
+</head>
+
+<body class="body">
+    <header id="nav-bar">
+    </header>
+    
+    <div class="myCenter pageTitle">Submit a Reimbursement</div>
+
+    <div id="submit-div" class="myCenter">
+            <form name="reim-form" onsubmit="doSubmitReim(event.preventDefault())">
+                <label for="amount">Amount</label><input type="text" id="amount" name="amount" placeholder="$0.00"> 
+                <label for="type">Reimbursement Type </label>
+                <input type="radio" id="food" name="type" value="food"> Food
+                <input type="radio" id="travel" name="type" value="travel"> Travel
+                <input type="radio" id="lodge" name="type" value="lodge"> Lodge
+                <input type="radio" id="other" name="type" value="other" checked> Other
+                <label for="description">Description</label>
+                <input type="text" id="description" name="description" placeholder="Description"> 
+                <button style="background-color: #31c6e8;" type="submit" class="btn btn-primary">Submit</button>
+            </form>
+    </div>
+    <div id="warningText"></div>
+
+
+
+</body>
+
+</html>

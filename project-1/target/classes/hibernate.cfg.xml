@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<!-- WHAT IS HIBERNATE? Hibernate is an ORM and persistence framework What's 
+	an ORM? Object Relational Mapping. We take Objects in programming languages 
+	and translate them into tables in our DB What is persistence? Storing info/data 
+	in a DB in a way in which it's durable What are the benefits of Hibernate? 
+	- it's Object Oriented - it's fast - it uses caching (which means there are 
+	connection pools which minimize the bottle necked speed caused by forming 
+	DB connections) - it's modular (which means you can write code once and change 
+	it later to modify our SQL/connection properties) -->
+
+<!-- The configuration class obj defines the properties of the session needed 
+	to communicate with our database -->
+<hibernate-configuration>
+	<session-factory>
+
+		<!-- JDBC properties -->
+		<property name="hibernate.connection.username">postgres</property>
+		<property name="hibernate.connection.password">projectoneta4k3it!</property>
+		<property name="hibernate.connection.url">jdbc:postgresql://database-2.cc24tsfb4ap7.us-east-2.rds.amazonaws.com:5432/postgres</property>
+
+		<property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
+		<property name="hibernate.connection.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
+		<property name="hibernate.show_sql">false</property>
+		<property name="hibernate.format_sql">false</property>
+
+		<!-- The Connection Pool is a method of speeding up DB calls. Hibernate 
+			will create 10 connections to the DB when it starts up. Everytime you create 
+			a session, the session will borrow an active connection from the pool. When 
+			you close the session, the connection doesn't close, but is freed up for 
+			another session to use. (default size of connection pool is 20) -->
+		<property name="hibernate.connection.pool_size">10</property>
+
+		<!-- hbm2ddl.auto is a hibernate property that exports schema DDL to the 
+			DB when the SessionFactory is created -->
+		<property name="hibernate.hbm2ddl.auto">validate</property>
+		<!-- CREATE, VALIDATE, UPDATE, NONE -->
+		<!-- CREATE: drops all existing tables and objs with the names provided 
+			in annotations, then Hibernate will create the schema for us (NOT PARTICULARLY 
+			GREAT FOR PRODUCTION, BUT USEFUL FOR DEVELOPMENT) -->
+		<!-- VALIDATE: checks to make sure the schema still exists as expected -->
+		<!-- UPDATE: hibernate will not delete anything, but only add to schema 
+			if there are objects that haven't been included yet -->
+		<!-- NONE: means that Hibernate will not do anything, or add to your schema -->
+
+		<mapping class="com.revature.models.User"/>
+		<mapping class="com.revature.models.Reimbursement"/>
+		<mapping class="com.revature.models.Role"/>
+		<mapping class="com.revature.models.ReimStatus"/>
+		<mapping class="com.revature.models.ReimType"/>
+	</session-factory>
+</hibernate-configuration>

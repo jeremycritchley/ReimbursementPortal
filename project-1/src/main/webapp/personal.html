@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reimbursement Portal</title>
+    <link rel="stylesheet" href="../styles/headerStyles.css">
+    <link rel="stylesheet" href="../styles/personal.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="../scripts/personal.js"></script>
+</head>
+
+<body class="body">
+    <header id="nav-bar">
+    </header>
+
+    <div class="myCenter pageTitle">Your Info</div>
+    
+    <div id="personal-div" class="myCenter">
+        <form onsubmit="updatePersonalInfo(event.preventDefault)">
+        <div id="div_user_id"><label for="user_id">User ID</label><div id="user_id"></div></div>
+        <div id="div_username"><label for="username">Username</label><div id="username"></div></div>
+        <div id="div_first_name"><label for="first_name">First Name</label><div id="first_name"></div></div>
+        <div id="div_last_name"><label for="last_name">Last Name</label><div id="last_name"></div></div>
+        <div id="div_email"><label for="email">Email Address</label><div id="email"></div></div>
+        <div id="div-role"><label for="role">Role</label><div id="role"></div></div>
+        <button style="background-color: #31c6e8;" type="submit" class="btn btn-primary myCenter" id="secondary_button" type="submit">Update</button>
+        </form>
+        <button style="background-color: #31c6e8;" class="btn btn-primary myCenter" id="initial_button" onclick="hideshow()">Update Info</button>
+    </div>
+    
+    <div class="myCenter">
+    <p id="warningText"></p>
+    </div>
+
+
+</body>
+
+</html>

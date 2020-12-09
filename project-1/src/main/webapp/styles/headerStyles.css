@@ -1,0 +1,52 @@
+#header {
+    background-color: #bccde8;
+    width: 100%;
+    height: 15%;
+   /* position: fixed;*/
+    top: 0px;
+    left: 0px;
+   text-align: center;
+   white-space: nowrap;
+}
+
+#helper {
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+}
+
+#header a img {
+    /*position: relative;*/
+    width: auto;
+    height: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/*#header .logout {
+    right: 20px;
+    top: 90%;
+    transform: translateY(-10%);
+}*/
+
+.body {
+    background-color: #d4e8e8;
+}
+
+.myCenter {
+    padding:5%;
+    justify-content: center;
+    text-align: center;
+}
+
+.pageTitle {
+    padding: 5%;
+    font-family: Verdana, Geneva, Tahoma;
+    font-size: 5ch;
+    font: bold;
+}
+
+#warningText {
+    background-color: #ff8787;
+}
+
